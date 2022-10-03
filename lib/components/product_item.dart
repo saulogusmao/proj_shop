@@ -64,8 +64,13 @@ class ProductItem extends StatelessWidget {
                         listen: false,
                       ).removeProduct(product);
                     } on HttpException catch (error) {
+                      //aqui foi apagado o 'print(error.toStrib)'
+                      //que só serviu para especificar o erro no terminal
                       msg.showSnackBar(
-                          SnackBar(content: Text(error.toString())));
+                        SnackBar(
+                          content: Text(error.toString()),
+                        ),
+                      );
                     }
                   }
                 });
