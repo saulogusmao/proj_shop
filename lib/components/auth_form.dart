@@ -20,6 +20,8 @@ class _AuthFormState extends State<AuthForm> {
     'email': '',
     'password': '',
   };
+  bool _isLogin() => _authMode == AuthMode.Login;
+  bool _isSignup() => _authMode == AuthMode.Signup;
   void _submit() {}
   @override
   Widget build(BuildContext context) {
@@ -62,12 +64,12 @@ class _AuthFormState extends State<AuthForm> {
                   return null;
                 },
               ),
-              if (_authMode == AuthMode.Signup)
+              if (_isSignup())
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Confirmar senha'),
                   keyboardType: TextInputType.emailAddress,
                   obscureText: true,
-                  validator: _authMode == AuthMode.Login
+                  validator: _isLogin()
                       ? null
                       : (_password) {
                           final password = _password ??
