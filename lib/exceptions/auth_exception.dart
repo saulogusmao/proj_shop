@@ -1,5 +1,3 @@
-import 'dart:html';
-
 class AuthException implements Exception {
   //parametros tirados do 'firebase.google.com/docs'
   static const Map<String, String> errors = {
