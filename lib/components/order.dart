@@ -20,6 +20,7 @@ class _OrderWidgetState extends State<OrderWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final itemsHeight = (widget.order.products.length * 25.0) + 10;
     return Card(
       child: Column(
         children: [
@@ -43,7 +44,7 @@ class _OrderWidgetState extends State<OrderWidget> {
                 horizontal: 15,
                 vertical: 4,
               ),
-              height: (widget.order.products.length * 25.0) + 10,
+              height: itemsHeight,
               child: ListView(
                 children: widget.order.products.map((product) {
                   return Row(
